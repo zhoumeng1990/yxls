@@ -1,5 +1,6 @@
 package com.coder.yxls.activitys
 
+import androidx.lifecycle.Observer
 import com.coder.framework.base.BaseActivity
 import com.coder.yxls.R
 import com.coder.yxls.vm.MainVM
@@ -20,5 +21,11 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initData() {
+    }
+
+    override fun update() {
+        mainVM.loginData.observe(this, Observer {
+
+        })
     }
 }

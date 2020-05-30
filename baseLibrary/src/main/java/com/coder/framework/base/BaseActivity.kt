@@ -66,12 +66,17 @@ abstract class BaseActivity : AppCompatActivity(), EasyPermissions.PermissionCal
         initView()
         initData(savedInstanceState)
         initData()
+        update()
     }
 
     abstract fun layoutId(): Int
     abstract fun initView()
     abstract fun initData()
     open fun initData(savedInstanceState: Bundle? = null) {
+
+    }
+
+    open fun update(){
 
     }
 
