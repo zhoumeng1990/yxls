@@ -2,4 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.coder.little">
 
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="yxls"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true">
+
+        <service android:name=".services.SuspendWindowService" />
+        <service
+                android:name=".services.WorkAccessibilityService"
+                android:enabled="true"
+                android:exported="true"
+                android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.accessibilityservice"
+                    android:resource="@xml/allocation" />
+        </service>
+    </application>
 </manifest>
