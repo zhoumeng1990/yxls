@@ -17,7 +17,7 @@ object RetrofitFactory {
     val instance: ApiService by lazy { create(ApiService::class.java) }
 
     private val moshi = Moshi.Builder()
-        .add(NULL_TO_EMPTY_STRING_ADAPTER)
+        .add(NullToEmptyStringAdapter)
 //        .add(KotlinJsonAdapterFactory())
         .build()
 
@@ -37,7 +37,7 @@ object RetrofitFactory {
     }
 }
 
-object NULL_TO_EMPTY_STRING_ADAPTER {
+object NullToEmptyStringAdapter {
     @FromJson
     fun fromJson(reader: JsonReader): String {
         if (reader.peek() != JsonReader.Token.NULL) {
