@@ -9,5 +9,6 @@ import okhttp3.Interceptor
  *
  */
 object FloatViewModel:ViewModel() {
+    var chainDataList = ArrayList<Interceptor.Chain>()
     var chainData = MutableLiveData<ArrayList<Interceptor.Chain>>()
 }

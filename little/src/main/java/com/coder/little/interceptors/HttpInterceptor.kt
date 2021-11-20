@@ -10,7 +10,8 @@ import okhttp3.Response
  */
 class HttpInterceptor :Interceptor{
     override fun intercept(chain: Interceptor.Chain): Response {
-        FloatViewModel.chainData.value?.add(chain)
+        FloatViewModel.chainDataList.add(chain)
+        FloatViewModel.chainData.postValue(FloatViewModel.chainDataList)
         val request = chain.request()
         return chain.proceed(request)
     }
